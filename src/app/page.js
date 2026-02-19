@@ -1,65 +1,126 @@
-import Image from "next/image";
+import Navbar from "./components/Navbar";
+import Hero3D from "./components/Hero3D";
+import LiveClock from "./components/LiveClock";
 
 export default function Home() {
+  const services = [
+    { num: "01", title: "Cloud & DevOps", text: "Secure, scalable cloud environments with CI/CD automation." },
+    { num: "02", title: "Cybersecurity", text: "Zero‑trust architecture, SOC monitoring, and compliance." },
+    { num: "03", title: "Software Development", text: "Enterprise‑grade applications tailored to your workflows." },
+    { num: "04", title: "IT Infrastructure", text: "Modern networking, virtualization, and server architecture." },
+    { num: "05", title: "Managed IT Services", text: "24/7 monitoring, SLAs, and proactive maintenance." },
+    { num: "06", title: "Digital Transformation", text: "Automation, modernization, and strategic IT consulting." }
+  ];
+
+  const partners = [
+    "AWS", "Azure", "Google Cloud", "Cisco", "VMware", "Fortinet",
+    "Oracle", "SAP", "Adobe", "Shopify", "Stripe"
+  ];
+
+  const testimonials = [
+    { name: "Rahul Verma", company: "FinEdge Capital", text: "Ayanshu Innovations transformed our cloud infrastructure with unmatched precision." },
+    { name: "Sarah Mathews", company: "RetailHub", text: "Their cybersecurity overhaul reduced our incidents by 78%." },
+    { name: "Mohammed Al‑Zayed", company: "Gulf Manufacturing", text: "The custom ERP system improved our efficiency by 32%." }
+  ];
+
+  const insights = [
+    { title: "Why Cloud‑Native Architecture Wins", date: "Jan 2026", read: "5 min read" },
+    { title: "Modern Cybersecurity for Modern Threats", date: "Dec 2025", read: "6 min read" },
+    { title: "Scaling IT Infrastructure in 2026", date: "Nov 2025", read: "4 min read" }
+  ];
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.js file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <div className="main-layout">
+
+      {/* NAVBAR */}
+      <Navbar />
+
+     {/* FULLSCREEN 3D HERO */}
+     <div className="hero-container">
+       <Hero3D />
+
+       <div className="hero-time">
+         <LiveClock />
+       </div>
+
+       <div className="hero-text-wrapper">
+         <h1 className="hero-headline">
+           ACCELERATING TRANSFORMATIVE CUSTOMER EXPERIENCES
+         </h1>
+
+         <p className="hero-subtext">
+           Ayanshu Innovations delivers intelligent, scalable, and secure digital solutions.
+         </p>
+       </div>
+     </div>
+
+
+      {/* SERVICES */}
+      <section id="services" className="section container">
+
+        <h2 className="section-title">Our Services</h2>
+        <p className="section-subtitle">Enterprise‑grade IT solutions engineered for performance and security.</p>
+
+        <div className="services-grid">
+          {services.map((s) => (
+            <div key={s.title} className="card">
+              <div style={{ fontSize: "28px", fontWeight: "700", color: "#00E0FF" }}>{s.num}</div>
+              <h3 className="service-title">{s.title}</h3>
+              <p className="service-text">{s.text}</p>
+            </div>
+          ))}
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      {/* PARTNERS */}
+      <section className="section container">
+        <h2 className="section-title">Our Technology Partners</h2>
+        <p className="section-subtitle">Trusted by global leaders in cloud, security, and enterprise tech.</p>
+
+        <div className="services-grid">
+          {partners.map((p) => (
+            <div key={p} className="card" style={{ textAlign: "center", fontWeight: "600" }}>
+              {p}
+            </div>
+          ))}
         </div>
-      </main>
+      </section>
+
+      {/* TESTIMONIALS */}
+      <section className="section container">
+        <h2 className="section-title">Testimonials</h2>
+        <p className="section-subtitle">What our clients say about us.</p>
+
+        <div className="services-grid">
+          {testimonials.map((t) => (
+            <div key={t.name} className="card">
+              <p className="service-text">"{t.text}"</p>
+              <p style={{ marginTop: "12px", fontWeight: "600" }}>{t.name}</p>
+              <p style={{ color: "#C9CED6" }}>{t.company}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* INSIGHTS */}
+      <section className="section container">
+        <h2 className="section-title">Insights</h2>
+        <p className="section-subtitle">Latest thoughts, trends, and technology insights.</p>
+
+        <div className="services-grid">
+          {insights.map((i) => (
+            <div key={i.title} className="card">
+              <h3 className="service-title">{i.title}</h3>
+              <p className="service-text">{i.date} • {i.read}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* FOOTER */}
+      <footer className="footer">
+        © {new Date().getFullYear()} Ayanshu Innovations Pvt. Ltd. All rights reserved.
+      </footer>
     </div>
   );
 }
