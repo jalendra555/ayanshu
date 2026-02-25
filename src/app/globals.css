@@ -510,68 +510,50 @@ html, body {
 }
 
 
-.method-4d {
-  padding: 80px 20px;
-  text-align: center;
-  color: #fff;
-}
-
-.method-title {
-  font-size: 36px;
-  font-weight: 800;
-  margin-bottom: 10px;
-}
-
-.method-subtitle {
-  font-size: 18px;
-  color: #C9CED6;
-  max-width: 640px;
-  margin: 0 auto 40px;
-}
-
 .method-loop-wrapper {
   display: flex;
   justify-content: center;
+  width:100%;
 }
 
 .method-loop {
   position: relative;
-  max-width: 800px;
-  width: 100%;
+
+  width: 2000px;
 }
 
 .method-loop-svg {
   width: 100%;
-  filter: drop-shadow(0 0 25px rgba(124, 58, 237, 0.6));
+  display: block;
 }
 
-/* Nodes */
+/* Circles */
 .method-node circle {
   fill: #8B5CF6;
   stroke: #F9A8D4;
-  stroke-width: 3;
+  stroke-width: 4;
 }
 
 .method-node text {
   fill: #fff;
-  font-size: 14px;
+  font-size: 18px;
   font-weight: 700;
   text-anchor: middle;
   dominant-baseline: middle;
 }
 
-/* Labels around loop */
+/* Text row under loops */
 .method-items {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
+  margin-top: 32px;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
 }
 
 .method-item {
-  position: absolute;
-  width: 220px;
+  width: 22%;
   text-align: left;
-  font-size: 14px;
+  font-size: 13px;
   color: #E5E7EB;
 }
 
@@ -582,46 +564,21 @@ html, body {
   color: #F9FAFB;
 }
 
-/* Position each label similar to the snap */
-.method-item-1 {
-  top: -10px;
-  left: 0;
-}
-
-.method-item-2 {
-  top: -10px;
-  right: 0;
-}
-
-.method-item-3 {
-  bottom: -10px;
-  right: 0;
-}
-
-.method-item-4 {
-  bottom: -10px;
-  left: 0;
-}
-
+/* Mobile */
 @media (max-width: 768px) {
-  .method-item {
-    position: static;
-    width: 100%;
-    text-align: center;
-    margin-top: 16px;
-  }
-
   .method-items {
-    position: static;
-    margin-top: 20px;
+    flex-direction: column;
+    gap: 20px;
   }
 
-
+  .method-item {
+    width: 100%;
+  }
 }
 
 
 .glow-path {
-  stroke-dasharray: 20 1000;   /* small visible dash, long gap */
+  stroke-dasharray: 10 40;   /* small visible dash, long gap */
   stroke-dashoffset: 0;
   filter: drop-shadow(0 0 12px #ff66cc);
   animation: moveGlow 5s linear infinite;
@@ -862,5 +819,9 @@ html, body {
   .value-grid {
     grid-template-columns: 1fr;
   }
+}
+
+.about-values{
+padding-top:20px;
 }
 

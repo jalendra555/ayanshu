@@ -40,11 +40,9 @@ export default function AboutPage() {
            End-to-end innovative and forward-thinking solutions to make digital commerce simpler to navigate.
          </p>
 
-         <div className="method-loop-wrapper">
-           {/* Center infinity loop */}
-           <div className="method-loop">
+
              <svg
-               viewBox="0 0 400 200"
+               viewBox="0 0 900 260"
                className="method-loop-svg"
                xmlns="http://www.w3.org/2000/svg"
              >
@@ -55,26 +53,44 @@ export default function AboutPage() {
                  </linearGradient>
                </defs>
 
-               {/* Infinity path */}
+               {/* FOUR CONNECTED LOOPS */}
                <path
-                 d="M50,100 C100,20 150,20 200,100 C250,180 300,180 350,100
-                    M50,100 C100,180 150,180 200,100 C250,20 300,20 350,100"
+                 d="
+                   M80,130
+                   C140,40 200,40 260,130
+                   C320,220 380,220 440,130
+                   C500,40 560,40 620,130
+                   C680,220 740,220 800,130
+                   M80,130
+                   C140,220 200,220 260,130
+                   C320,40 380,40 440,130
+                   C500,220 560,220 620,130
+                   C680,40 740,40 800,130
+                 "
                  fill="none"
                  stroke="url(#loopGradient)"
-                 strokeWidth="14"
+                 strokeWidth="18"
                  strokeLinecap="round"
                />
 
 
+
+               {/* Glow */}
                <path
                  className="glow-path"
                  pathLength="1000"
                  d="
-                   M50,100
-                   C100,20 150,20 200,100
-                   C250,180 300,180 350,100
-                   C300,20 250,20 200,100
-                   C150,180 100,180 50,100
+                   M80,130
+                   C140,40 200,40 260,130
+                   C320,220 380,220 440,130
+                   C500,40 560,40 620,130
+                   C680,220 740,220 800,130
+
+                    M80,130
+                    C140,220 200,220 260,130
+                    C320,40 380,40 440,130
+                    C500,220 560,220 620,130
+                    C680,40 740,40 800,130
                  "
                  fill="none"
                  stroke="#ffffff"
@@ -82,50 +98,55 @@ export default function AboutPage() {
                  strokeLinecap="round"
                />
 
+               {/* Circles centered on each loop */}
+               <g className="method-node">
 
+                 <text x="170" y="136">DISCOVER</text>
+               </g>
 
-               {/* 4 numbered nodes */}
                <g className="method-node">
-                 <circle cx="95" cy="70" r="16" />
-                 <text x="95" y="75">1</text>
+
+                 <text x="350" y="136">DEFINE</text>
                </g>
+
                <g className="method-node">
-                 <circle cx="305" cy="70" r="16" />
-                 <text x="305" y="75">3</text>
+
+                 <text x="530" y="136">DEVELOP</text>
                </g>
+
                <g className="method-node">
-                 <circle cx="305" cy="130" r="16" />
-                 <text x="305" y="135">2</text>
-               </g>
-               <g className="method-node">
-                 <circle cx="95" cy="130" r="16" />
-                 <text x="95" y="135">4</text>
+
+                 <text x="710" y="136">DETERMINE</text>
                </g>
              </svg>
 
-             {/* Labels around the loop */}
+             {/* Text under each loop */}
              <div className="method-items">
-               <div className="method-item method-item-1">
+               <div className="method-item">
                  <h3>DISCOVER</h3>
-                 <p>Experience Brief – Deep understanding of market and audience dynamics.</p>
+                 <p>Experience Brief – Deep understanding of market, audience dynamics and core opportunities.</p>
                </div>
-               <div className="method-item method-item-2">
-                 <h3>DEVELOP</h3>
-                   <p>Consumer Journey &amp; Creative Solutions – Develop and execute impactful solutions.</p>
-                 </div>
-               <div className="method-item method-item-3">
+
+               <div className="method-item">
                  <h3>DEFINE</h3>
                  <p>Future-Proof Strategy – Clarity on a future-facing strategic direction.</p>
                </div>
 
-               <div className="method-item method-item-4">
+               <div className="method-item">
+                 <h3>DEVELOP</h3>
+                 <p>Consumer Journey &amp; Creative Solutions – Develop and execute relevant impactful solutions.</p>
+               </div>
+
+               <div className="method-item">
                  <h3>DETERMINE</h3>
-                 <p>Outcomes Tracker – Optimize effectiveness with a learning loop.</p>
+                 <p>Outcomes Tracker – Optimize effectiveness and a learning loop.</p>
                </div>
              </div>
-           </div>
-         </div>
+
+
        </section>
+
+
 
 
       {/* VALUE SYSTEM */}
